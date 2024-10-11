@@ -2,13 +2,16 @@ about-time==4.2.1
 alive-progress==3.1.5
 appnope==0.1.4
 asttokens==2.4.1
+coloredlogs==15.0.1
 comm==0.2.2
 debugpy==1.8.7
 decorator==5.1.1
 executing==2.1.0
 filelock==3.16.1
+flatbuffers==24.3.25
 fsspec==2024.9.0
 grapheme==0.6.0
+humanfriendly==10.0
 ipykernel==6.29.5
 ipython==8.28.0
 jedi==0.19.1
@@ -23,6 +26,7 @@ nest-asyncio==1.6.0
 networkx==3.4
 numpy==2.1.2
 onnx==1.17.0
+onnxruntime==1.19.2
 packaging==24.1
 parso==0.8.4
 pexpect==4.9.0

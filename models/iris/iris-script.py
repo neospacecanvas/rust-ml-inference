@@ -125,3 +125,36 @@ def convert_to_onnx(model, input_size, file_name="iris_model.onnx"):
 convert_to_onnx(model, input_size=4)
 
 
+# %%
+def verify_onnx_model(pytorch_model, onnx_file, input_size):
+    import onnx
+    import onnxruntime
+    import numpy as np
+
+    # Load the ONNX model
+    onnx_model = onnx.load(onnx_file)
+    onnx.checker.check_model(onnx_model)
+
+    # Create an ONNX Runtime session
+    ort_session = onnxruntime.InferenceSession(onnx_file)
+
+    # Generate a random input
+    input_data = np.random.randn(1, input_size).astype(np.float32)
+
+    # Run inference with ONNX Runtime
+    ort_inputs = {ort_session.get_inputs()[0].name: input_data}
+    ort_outputs = ort_session.run(None, ort_inputs)
+
+    # Run inference with PyTorch
+    pytorch_input = torch.tensor(input_data)
+    pytorch_model.eval()
+    with torch.no_grad():
+        pytorch_output = pytorch_model(pytorch_input)
+
+    # Compare the results
+    np.testing.assert_allclose(ort_outputs[0], pytorch_output.numpy(), rtol=1e-03, atol=1e-05)
+    print("ONNX model verified successfully!")
+
+# %% 
+# Verify the ONNX model
+verify_onnx_model(model, "iris_model.onnx", input_size=4)
