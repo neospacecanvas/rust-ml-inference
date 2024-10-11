@@ -1,7 +1,7 @@
 # rust-ml-inference
 An overly simple ml inference engine in Rust for small models to save on cloud compute or to run on client in WebAssembly.
 
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/jakehenderson/nocuments/code/projects/rust-ml-inference/graph%20of%20project%20purpose.png?version%3D1728661025279)
+![alt text](./graph_of_project_purpose.png)
 
 
 Why Use Rust for Inference
