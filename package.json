@@ -1,0 +1,7 @@
+{
+  "name": "onnx-inference",
+  "version": "1.0.0",
+  "dependencies": {
+    "onnxruntime-web": "^1.14.0"
+  }
+}
