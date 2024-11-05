@@ -8,18 +8,24 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 js-sys = "0.3.72"
-serde = {"1.0.214", features=["derive"]}
+serde = { version = "1.0.214", features = ["derive"] }
+serde-wasm-bindgen = "0.6.5"
 tract-onnx = "0.21.7"
 wasm-bindgen = "0.2.95"
 wasm-bindgen-futures = "0.4.45"
 wasm-streams = "0.4.2"
-web-sys = {"0.3.72", features=[
+web-sys = { version = "0.3.72", features=[
+  "console",
   "Window",
   "Document",
   "HtmlCanvasElement",
-  "WebGl2RenderingContext"
+  "WebGl2RenderingContext",
+  "Response"
 ]}
-wgpu = {"23.0.0", features=["webgl"]}
+wgpu = { version = "23.0.0", features=["webgl"] }
+getrandom = { version = "0.2", features = ["js"] }
+wasm-bindgen-test = "0.3"
 
-[dev.dependencies]
-tokio = {version = "1.0", features=["full"]}
+[dev-dependencies]
+wasm-bindgen-test = "0.3"
+console_error_panic_hook = "0.1.7"

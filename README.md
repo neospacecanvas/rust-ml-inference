@@ -70,3 +70,9 @@ run lib
 cargo run
 ```
 
+testing the WebAssembly
+```bash
+wasm-pack build --target web
+wasm-pack test --chrome
+```
+or --firefox or --safari
