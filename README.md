@@ -58,9 +58,11 @@ build rust crate
 if you are on mac, `onnxruntime` doesn't have a prebuilt binary for Arm64 so...
 ```bash
 brew install onnxruntime
+brew install protobuf
 ```
 add these configs to your `~/.zshrc` or `~/.bashrc` (whichever you use)
 ```bash
+export PROTOC=/opt/homebrew/bin/protoc
 export ORT_STRATEGY=system
 export ORT_LIB_LOCATION=$(brew --prefix onnxruntime)/lib/libonnxruntime.dylib
 ```
