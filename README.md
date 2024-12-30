@@ -54,6 +54,26 @@ For learning purposes of the rust language, pytorch, and building neural network
 
 rust setup in `neural-network` directory
 build rust crate
+
+if you are on mac, `onnxruntime` doesn't have a prebuilt binary for Arm64 so...
+```bash
+brew install onnxruntime
+```
+add these configs to your `~/.zshrc` or `~/.bashrc` (whichever you use)
+```bash
+export ORT_STRATEGY=system
+export ORT_LIB_LOCATION=$(brew --prefix onnxruntime)/lib/libonnxruntime.dylib
+```
+then to apply those configs run
+```bash
+source ~/.zshrc
+```
+or 
+```bash
+source ~/.bashrc
+```
+depending on whichever file you added the export commands to
+
 ---
 build and compile
 ```bash
