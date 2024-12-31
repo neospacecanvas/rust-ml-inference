@@ -1,0 +1,6 @@
+[env]
+ORT_STRATEGY = "system"
+ORT_LIB_LOCATION = "/opt/homebrew/lib/libonnxruntime.dylib"
+
+[target.'cfg(all())']
+rustflags = ["-L", "/opt/homebrew/lib"]
