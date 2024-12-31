@@ -65,6 +65,7 @@ add these configs to your `~/.zshrc` or `~/.bashrc` (whichever you use)
 export PROTOC=/opt/homebrew/bin/protoc
 export ORT_STRATEGY=system
 export ORT_LIB_LOCATION=$(brew --prefix onnxruntime)/lib/libonnxruntime.dylib
+export LIBRARY_PATH="/opt/homebrew/lib:$LIBRARY_PATH"
 ```
 then to apply those configs run
 ```bash
